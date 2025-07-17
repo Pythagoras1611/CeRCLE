@@ -1234,30 +1234,3 @@
     </script>
 </body>
 </html>
-                navigator.clipboard.writeText(window.location.href).then(function() {
-                    alert('Link copied to clipboard!');
-                }).catch(function() {
-                    fallbackCopyTextToClipboard(window.location.href);
-                });
-            } else {
-                fallbackCopyTextToClipboard(window.location.href);
-            }
-        }
-
-        function fallbackCopyTextToClipboard(text) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            try {
-                document.execCommand('copy');
-                alert('Link copied to clipboard!');
-            } catch (err) {
-                alert('Unable to copy link. Please copy manually: ' + text);
-            }
-            document.body.removeChild(textArea);
-        }
-    </script>
-</body>
-</html>
